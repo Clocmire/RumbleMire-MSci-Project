@@ -8,6 +8,9 @@ double* getcom();
 int getlevel();
 int getlabel();
 int& getparent();
+setparticle(particle& particle_ref);
+particle& getparticle();
+
 
 
 protected:
@@ -15,6 +18,8 @@ int itslabel;
 int itslevel;
 double itscom[3];
 int& itsparent;
+particle& itsparticle;
+boolean isleaf;
 
 };
 
@@ -51,5 +56,16 @@ treenode::int& getparent()
 {
   return itsparent;
 }
+
+treenode::setparticle(particle& particle_ref)
+{
+  itsparticle = particle_ref;
+}
+
+treenode::particle& getparticle()
+{
+  return itsparticle;
+}
+
 
 #endif
