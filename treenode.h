@@ -10,9 +10,6 @@ int& getparent();
 
 
 protected:
-itscom(POSITION); //placeholder
-itscount(int number); //spladp
-itsparent(int &parent treenode); //? Check references etc
 int itslabel;
 int itslevel;
 double itscom[3];
