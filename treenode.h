@@ -2,6 +2,7 @@
 #define treenode
 {
 public:
+treenode(int level, label);
 setcom();
 double* getcom();
 int getlevel();
@@ -16,6 +17,13 @@ double itscom[3];
 int& itsparent;
 
 };
+
+treenode::treenode(int level, label)
+{
+  itslevel = level;
+  itslabel = label;
+  
+}
 
 treenode::setcom(double x, y, z)
 {
