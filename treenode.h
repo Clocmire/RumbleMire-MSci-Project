@@ -2,14 +2,14 @@
 #define treenode
 {
 public:
-treenode(int level, label);
+treenode(int level, label, treenode& parent_ref);
 setcom();
 double* getcom();
 int getlevel();
 int getlabel();
-int& getparent();
-setparticle(particle& particle_ref);
-particle& getparticle();
+treenode& getparent();
+setparticle(particle* particle_ref);
+particle* getparticle();
 
 
 
@@ -17,16 +17,18 @@ protected:
 int itslabel;
 int itslevel;
 double itscom[3];
-int& itsparent;
-particle& itsparticle;
+treenode& itsparent;
+particle* itsparticle;
 boolean isleaf;
+treenode* daughters[4] = 0;
 
 };
 
-treenode::treenode(int level, label)
+treenode::treenode(int level, label, treenode& parent_ref)
 {
   itslevel = level;
   itslabel = label;
+  itsparent = parent_ref;
   
 }
 
@@ -52,17 +54,17 @@ treenode::int getlabel()
   return itslabel;
 }
 
-treenode::int& getparent()
+treenode::treenode& getparent()
 {
   return itsparent;
 }
 
-treenode::setparticle(particle& particle_ref)
+treenode::setparticle(particle* particle_ref)
 {
   itsparticle = particle_ref;
 }
 
-treenode::particle& getparticle()
+treenode::particle* getparticle()
 {
   return itsparticle;
 }
