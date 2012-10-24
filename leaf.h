@@ -4,22 +4,21 @@ class leaf: public treenode
 {
 public:
 leaf(&particle particle_ref);
-int& getitsparticle();
+particle& getitsparticle();
+
 private:
-itsparticle(int &particle particle);
+particle& itsparticle;
 
 };
 
 leaf::leaf(&particle particle_ref)
 {
-setitsparticle(particle_ref); //Do we set itsparticle (a reference) to another reference or the particle directly?
-setcount(1);
-setcom(getitsparticle().getposition()); //?!?!?!??!
+  itsparticle = particle_ref;
 }
 
-leaf::int& getitsparticle()
+leaf::particle& getitsparticle()
 {
-return itsparticle;
+  return itsparticle;
 }
 
 #endif
