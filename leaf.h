@@ -22,7 +22,4 @@ leaf::int& getitsparticle()
 return itsparticle;
 }
 
-//HELLO HELLO, HOLA
-
-
 #endif
